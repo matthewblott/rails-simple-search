@@ -1,11 +1,4 @@
-<ul id="<%= dom_id inbox %>" 
-    data-controller="results" 
-    data-action="results:selected->search#selected"
-    data-results-field-param="the_input"
-    >
-    <li 
-      data-action="click->results#select"
-      >
+<li id="<%= dom_id inbox %>"
+    data-action="click->results#select">
     <%= inbox.name %>
-  </li>
-</ul>
+</li>

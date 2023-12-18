@@ -1,5 +1,10 @@
 <turbo-frame id="search-frame">
-  <ul id="inboxes">
+  <ul id="inboxes"
+    data-controller="results" 
+    data-results-target="the_list" 
+    data-action="results:selected->search#selected"
+    data-results-field-param="the_input"
+    >
     <%= render @inboxes %>
   </ul>
 </turbo-frame>
