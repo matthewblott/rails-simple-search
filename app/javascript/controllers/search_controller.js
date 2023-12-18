@@ -20,7 +20,7 @@ export default class extends Controller {
   query() {
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
-      if (this.the_formTarget.querySelector('input').value.length > 2) {
+      if (this.the_formTarget.querySelector('input').value.length > 1) {
         this.the_formTarget.requestSubmit()
       }
     }, 500)
