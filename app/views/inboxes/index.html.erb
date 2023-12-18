@@ -1,0 +1,17 @@
+<form data-controller="search" 
+      data-search-target="the_form" 
+      data-turbo-frame="search-frame" 
+      data-action="results:selected@window->search#selected"
+      action="/search">
+      <input name="name" 
+             autofocus="autofocus" 
+             data-action="search#query"
+             data-field="the_input"
+             data-search-target="the_input">
+  <button data-action="search#clear">Clear</button>
+</form>
+
+<turbo-frame id="search-frame">
+</turbo-frame>
+
+
