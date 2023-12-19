@@ -1,17 +1,23 @@
-<form data-controller="search" 
-      data-search-target="the_form" 
-      data-turbo-frame="search-frame" 
-      data-action="results:selected@window->search#selected"
-      action="/search">
-      <input name="name" 
-             autofocus="autofocus" 
-             data-action="search#query"
-             data-field="the_input"
-             data-search-target="the_input">
-  <button data-action="search#clear">Clear</button>
-</form>
+<div
+  data-controller="search" 
+  >
+  <input
+    name="name" 
+    form="the_form"
+    data-search-target="the_input" 
+    data-action="search#query"
+    >
+  <button data-search-target="clear" data-action="search#clear">Clear</button>
+  <button style="display: none"
+    type="submit"
+    form="the_form"
+    data-search-target="the_submit"
+    >
+  </button>
+  <div
+        
+</div>
 
-<turbo-frame id="search-frame">
+<turbo-frame id="search-frame" data-turbo-frame="search-frame">
+  <form action="/search" id="the_form"></form>
 </turbo-frame>
-
-

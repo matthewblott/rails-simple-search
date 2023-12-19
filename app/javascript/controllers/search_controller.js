@@ -1,27 +1,22 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['the_form', 'the_input']
+  static targets = ['the_input', 'the_submit']
 
   clear() {
     this.the_inputTarget.value = ''
   }
 
   selected(event) {
-    const { field, value } = event.detail;
-
-    this.the_inputTargets.forEach((element) => {
-      if (element.dataset.field === field) {
-        element.value = value;
-      }
-    });
+    const { value } = event.detail;
+    this.the_inputTarget.value = value;
   }
 
   query() {
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
-      if (this.the_formTarget.querySelector('input').value.length > 1) {
-        this.the_formTarget.requestSubmit()
+      if (this.the_inputTarget.value.length > 1) {
+        this.the_submitTarget.click()
       }
     }, 500)
   }
