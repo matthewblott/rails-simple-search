@@ -1,5 +1,6 @@
 <div
-  data-controller="search" 
+    data-controller="search" 
+    data-action="results:selected@window->search#selected"
   >
   <input
     name="name" 
@@ -14,8 +15,6 @@
     data-search-target="the_submit"
     >
   </button>
-  <div
-        
 </div>
 
 <turbo-frame id="search-frame" data-turbo-frame="search-frame">
